@@ -1,26 +1,13 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Intro from "../components/landing/Intro.astro";
-import Footer from "../components/Footer.astro";
-import "../styles/global.css";
 import Projects from "../components/landing/Projects.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>agmmtoo</title>
-  </head>
-  <body>
-    <main>
-      <Intro />
-      <Projects />
-    </main>
-    <Footer />
-  </body>
-</html>
+<BaseLayout title="agmmtoo">
+  <Intro />
+  <Projects />
+</BaseLayout>
 
 <style>
   main {

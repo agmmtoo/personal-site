@@ -8,7 +8,7 @@ const featuredProjects = getFeaturedProjects();
   <div class="featured-projects-grid">
     {
       featuredProjects.slice(0, 4).map((project: Project) => (
-        <a href={`/projects/${project.slug}`} class="project">
+        <a href={`/projects/${project.slug}`} class="project tilt-card">
           <h6>{project.name}</h6>
           <div>{project.description}</div>
         </a>
@@ -37,8 +37,18 @@ const featuredProjects = getFeaturedProjects();
     padding: 1rem;
     border: 1px solid var(--accents-2);
     border-radius: 4px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    touch-action: pan-y;
   }
   .project:first-child {
     grid-row: span 2 / span 2;
+  }
+
+  .tilt-card {
+    transition: all 400ms ease;
+  }
+  .tilt-card:hover {
+    scale: 1.02;
   }
 </style>
