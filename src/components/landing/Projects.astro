@@ -1,0 +1,44 @@
+---
+import { getFeaturedProjects } from "../../utils/getProjects";
+import Project from "../../types/Project";
+const featuredProjects = getFeaturedProjects();
+---
+
+<section>
+  <div class="featured-projects-grid">
+    {
+      featuredProjects.slice(0, 4).map((project: Project) => (
+        <a href={`/projects/${project.slug}`} class="project">
+          <h6>{project.name}</h6>
+          <div>{project.description}</div>
+        </a>
+      ))
+    }
+    <a href="/projects" class="project">
+      <h6>See all projects</h6>
+      <div>View all projects &rarr;</div>
+    </a>
+  </div>
+</section>
+
+<style>
+  .featured-projects-grid {
+    max-width: 40rem;
+    margin: auto;
+    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10rem 10rem 10rem;
+  }
+
+  .project {
+    text-decoration: none;
+    color: inherit;
+    padding: 1rem;
+    border: 1px solid var(--accents-2);
+    border-radius: 4px;
+  }
+  .project:first-child {
+    grid-row: span 2 / span 2;
+  }
+</style>

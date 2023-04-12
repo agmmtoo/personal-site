@@ -1,0 +1,67 @@
+---
+const { projects } = Astro.props;
+import Project from "../types/Project";
+---
+
+<div class="projects-grid">
+  {
+    projects.map((project: Project) => (
+      <a href={`/projects/${project.slug}`} class="project">
+        <h6>{project.name}</h6>
+        <div>{project.description}</div>
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+  }
+  .project {
+    aspect-ratio: 2;
+    text-decoration: none;
+    color: inherit;
+    padding: 1rem;
+    border: 1px solid var(--accents-2);
+    border-radius: 4px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    touch-action: pan-y;
+    transition-property: border-color, background, box-shadow;
+    transition-duration: 300ms;
+    transitiontiming-function: ease;
+  }
+
+  .project:hover {
+    border-color: var(--accents-3);
+    overflow: hidden;
+    box-shadow: var(--shadow-small);
+  }
+
+  .bg-grid {
+    background-size: 20px 20px;
+    background-image: linear-gradient(to right, #23262d2d 1px, transparent 1px),
+      linear-gradient(to bottom, #23262d23 1px, transparent 1px);
+    background-position: top center;
+    image-rendering: pixelated;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      10%,
+      white,
+      90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      10%,
+      white,
+      90%,
+      transparent
+    );
+  }
+</style>
