@@ -10,11 +10,11 @@ const featuredProjects = getFeaturedProjects();
       featuredProjects.slice(0, 4).map((project: Project) => (
         <a href={`/projects/${project.slug}`} class="project tilt-card">
           <h6>{project.name}</h6>
-          <div>{project.description}</div>
+          <p>{project.description}</p>
         </a>
       ))
     }
-    <a href="/projects" class="project">
+    <a href="/projects" class="project tilt-card">
       <h6>See all projects</h6>
       <div>View all projects &rarr;</div>
     </a>
@@ -41,6 +41,7 @@ const featuredProjects = getFeaturedProjects();
     -webkit-touch-callout: none;
     touch-action: pan-y;
   }
+
   .project:first-child {
     grid-row: span 2 / span 2;
   }
@@ -48,8 +49,24 @@ const featuredProjects = getFeaturedProjects();
   .tilt-card {
     transition: all 400ms ease;
   }
+  .tilt-card p {
+    color: var(--accents-6);
+  }
+
+  .tilt-card h6 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5ch;
+    font-family: Montserrat, sans-serif;
+  }
   .tilt-card:hover {
-    /* scale: 1.02; */
+    background-color: var(--accents-1);
     border-color: var(--theme-1);
+  }
+  .tilt-card:hover > h6 {
+    color: var(--theme-1);
+    text-decoration: underline;
   }
 </style>

@@ -7,7 +7,7 @@ const getTheme = () => {
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     return "dark";
   }
-  return "light";
+  return null;
 };
 
 export default function DarkmodeBtn() {
@@ -16,8 +16,8 @@ export default function DarkmodeBtn() {
   useEffect(() => {
     const root = window.document.documentElement;
     const isDark = darkmode;
-    root.classList.remove(isDark ? "light" : "dark");
-    root.classList.add(isDark ? "dark" : "light");
+    !isDark && root.classList.remove("dark");
+    isDark && root.classList.add("dark");
   }, [darkmode]);
 
   const handleClick = () => {

@@ -161,6 +161,7 @@ body {
   color: var(--geist-foreground);
   background-color: var(--geist-background);
   transition: color 0.2s ease-out, background 0.2s ease-out;
+  text-underline-offset: 0.5ch;
 }
 
 input[type="checkbox"] {

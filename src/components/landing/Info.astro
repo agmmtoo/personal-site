@@ -2,7 +2,7 @@
 ---
 
 <section>
-  I do <span id="field">
+  I do <span id="fe">
     <svg
       width="51"
       height="61"
@@ -16,8 +16,22 @@
       >
       </path>
     </svg>
-    HTML/CSS and some CRUD
-  </span> - mostly wih <span id="lang">
+    HTML/CSS
+  </span> and some <span id="be">
+    <svg
+      width="51"
+      height="61"
+      viewBox="0 0 51 61"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M40.5774 60.3976L50.3968 41.137L28.807 42.2634L40.5774 60.3976ZM0.350596 0.987546C0.331576 7.74923 0.816266 12.8332 1.73497 16.6174C2.65138 20.3922 4.04235 23.05 5.97549 24.7392C7.95542 26.4692 10.2624 26.975 12.5361 26.9314C14.745 26.889 17.071 26.3226 19.2055 25.7884C21.4232 25.2334 23.4719 24.7025 25.4333 24.5392C27.3589 24.3789 29.0275 24.5931 30.4904 25.4057C33.4172 27.0314 36.4109 31.5953 37.8398 43.785L41.5589 43.3491C40.1161 31.0402 36.9706 24.7218 32.3086 22.1322C29.9772 20.8372 27.489 20.6105 25.1226 20.8075C22.792 21.0015 20.4136 21.626 18.2964 22.1559C16.0958 22.7066 14.179 23.1546 12.4643 23.1875C10.8143 23.2192 9.51708 22.8611 8.43934 21.9194C7.31482 20.9368 6.19469 19.1152 5.37384 15.734C4.55528 12.3623 4.07653 7.61386 4.09514 0.99808L0.350596 0.987546Z"
+        fill="currentColor"
+      >
+      </path>
+    </svg>CRUD</span
+  > - mostly wih <span id="lang">
     Js
     <svg
       width="51"
@@ -34,21 +48,32 @@
 </section>
 
 <style>
-
+  section {
+    font-size: larger;
+  }
   span {
     display: inline-block;
     position: relative;
     text-decoration: underline;
-    text-underline-offset: 0.2rem;
+    text-underline-offset: 0.5ch;
     text-decoration-style: wavy;
     text-decoration-color: var(--theme-1);
   }
 
-  span#field svg {
+  span#fe svg {
     color: var(--theme-1);
     position: absolute;
     display: block;
-    right: 6rem;
+    right: 25%;
+    bottom: 0.2rem;
+    width: 1.2rem;
+  }
+  span#be svg {
+    transform: scaleX(-1);
+    color: var(--theme-1);
+    position: absolute;
+    display: block;
+    right: 25%;
     bottom: 0.2rem;
     width: 1.2rem;
   }
@@ -67,13 +92,17 @@
     position: absolute;
     left: 25%;
     text-transform: uppercase;
-    font-size: xx-small;
+    font-size: small;
     display: block;
     rotate: -12deg;
   }
 
-  span#field::before {
-    content: "Web Development";
+  span#fe::before {
+    content: "Front End";
+    bottom: 3rem;
+  }
+  span#be::before {
+    content: "Back End";
     bottom: 3rem;
   }
 
