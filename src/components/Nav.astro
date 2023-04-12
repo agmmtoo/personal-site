@@ -3,16 +3,19 @@
 
 <nav>
   <a href="/" class="logo">Agmmtoo</a>
-  <div class="nav-links">
-    <a href="/projects">Projects</a>
-    <a href="/writing">Writing</a>
+  <div class="burger-menu">
+    <div class="nav-links">
+      <a href="/projects">Projects</a>
+      <a href="/writing">Writing</a>
+      <input type="checkbox" id="darkmode-btn" />
+    </div>
+    <input type="checkbox" id="menu-btn" />
   </div>
 </nav>
 
 <style>
   nav {
     text-transform: uppercase;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 1rem var(--padding-1);
@@ -24,4 +27,49 @@
     text-decoration: none;
     color: inherit;
   }
+
+  .nav-links {
+    position: absolute;
+    left: 0;
+    top: 3.6rem;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links.open {
+    display: flex;
+    border-bottom: 1px solid var(--accents-1);
+    padding: var(--padding-1);
+    gap: 1rem;
+    align-items: center;
+    backdrop-filter: blur(2px);
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+
+  /* #menu-btn, */
+  #darkmode-btn {
+    accent-color: var(--theme-1);
+  }
+
+  @media screen and (min-width: 636px) {
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      position: inherit;
+      gap: 1rem;
+      align-items: baseline;
+    }
+    #menu-btn {
+      display: none;
+    }
+  }
 </style>
+
+<script>
+  import "../scripts/menu.js";
+  import "../scripts/darkmode.js";
+</script>

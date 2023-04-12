@@ -25,8 +25,7 @@ import Info from "./Info.astro";
   h1::after {
     color: var(--theme-1);
     font-family: Inter;
-    text-transform: capitalize;
-    font-weight: lighter;
+    text-transform: initial;
     font-size: small;
     display: block;
     margin-top: 1rem;
@@ -34,7 +33,8 @@ import Info from "./Info.astro";
   h1::before {
     content: "Hi, I'm";
   }
-  /* h1::after {
-    content: "A software engineer based in Yangon, Myanmar.";
-  } */
+  h1::after {
+    content: "@agmmtoo";
+    text-align: right;
+  }
 </style>
