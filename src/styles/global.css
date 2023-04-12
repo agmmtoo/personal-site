@@ -125,7 +125,10 @@ ol {
   --accents-7: #333;
   --accents-8: #111;
 
-  --theme-1: #ea580c;
+  --geist-foreground: #0a0a0a;
+  --geist-background: #f9fafb;
+
+  --theme-1: #f97316;
 
   /* spacings */
   --padding-1: 2rem;
@@ -141,5 +144,25 @@ ol {
 }
 
 .dark {
-  --theme-1: green;
+  --theme-1: lime;
+  --geist-foreground: #f9fafb;
+  --geist-background: #0a0a0a;
+  --accents-8: #fafafa;
+  --accents-7: #eaeaea;
+  --accents-6: #999;
+  --accents-5: #888;
+  --accents-4: #666;
+  --accents-3: #444;
+  --accents-2: #333;
+  --accents-1: #111;
+}
+
+body {
+  color: var(--geist-foreground);
+  background-color: var(--geist-background);
+  transition: color 0.2s ease-out, background 0.2s ease-out;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--theme-1);
 }
