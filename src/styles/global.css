@@ -82,32 +82,6 @@ main {
   margin: auto;
 }
 
-/*
-html {
-  max-width: 70ch;
-  padding: 3em 1em;
-  margin: auto;
-  line-height: 1.75;
-  font-size: 1.25em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 3em 0 1em;
-}
-
-p,
-ul,
-ol {
-  margin-bottom: 2em;
-  color: #1d1d1d;
-  font-family: sans-serif;
-} */
-
 @supports (font-variation-settings: normal) {
   html {
     font-family: Inter var, sans-serif;
@@ -126,7 +100,7 @@ ol {
   --accents-8: #111;
 
   --geist-foreground: #0a0a0a;
-  --geist-background: #f9fafb;
+  --geist-background: #fcfbfc;
 
   --theme-1: #f97316;
 
@@ -166,4 +140,23 @@ body {
 
 input[type="checkbox"] {
   accent-color: var(--theme-1);
+}
+
+.subtitle {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5ch;
+}
+
+@media screen and (min-width: 768px) {
+  .subtitle {
+    letter-spacing: 1ch;
+  }
+}
+
+.page-heading {
+  display: grid;
+  place-items: center left;
+  min-height: 60vh;
 }
