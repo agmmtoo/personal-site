@@ -1,5 +1,15 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectGrid from "../../components/ProjectGrid.astro";
+
+import getProjects from "../../utils/getProjects";
+const projects = getProjects();
 ---
 
-<BaseLayout title="Projects" />
+<BaseLayout title="Projects">
+  <section class="page-heading">
+    <h1 class="subtitle">Projects</h1>
+  </section>
+  <ProjectGrid projects={projects} />
+</BaseLayout>
+
