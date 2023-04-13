@@ -1,5 +1,6 @@
 ---
-import DarkmodeBtn from "./DarkmodeBtn";
+// import DarkmodeBtn from "./DarkmodeBtn";
+import DarkmodeBtn from "./DarkmodeBtn.astro";
 ---
 
 <nav>
@@ -8,7 +9,7 @@ import DarkmodeBtn from "./DarkmodeBtn";
     <div class="nav-links">
       <a href="/projects">Projects</a>
       <a href="/writing">Writing</a>
-      <DarkmodeBtn client:only />
+      <DarkmodeBtn />
     </div>
     <input type="checkbox" id="menu-btn" />
   </div>
@@ -70,4 +71,5 @@ import DarkmodeBtn from "./DarkmodeBtn";
 
 <script>
   import "../scripts/menu.js";
+  import "../scripts/darkmode.js"
 </script>
