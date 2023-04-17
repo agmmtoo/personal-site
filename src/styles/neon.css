@@ -1,0 +1,32 @@
+.neon {
+    background-image: linear-gradient(to right, var(--geist-foreground) var(--v),#9a47f3 calc(var(--v) + 25%),#fcb26d calc(var(--v) + 50%),#ff61e6 calc(var(--v) + 75%),#2dd2dd calc(var(--v) + 100%));
+    background-clip: text;
+    color: transparent;
+    animation: change 10s linear infinite;
+}
+
+@property --v {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: false;
+}
+
+@keyframes change {
+    0%, 100% {
+        --v: 0%;
+    }
+    50% {
+        --v: 100%;
+    }
+}
+
+.dark .neon:hover {
+    transition: text-shadow 0.2s ease-out;
+    text-shadow:  0 0 7px #fff,
+    0 0 1rem var(--theme-1),
+    0 0 2rem var(--theme-1),
+    0 0 4rem var(--theme-1),
+    0 0 6rem var(--theme-1),
+    0 0 8rem var(--theme-1),
+    0 0 10em var(--theme-1);
+}
