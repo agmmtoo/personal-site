@@ -1,12 +1,51 @@
 ---
 ---
 
-<footer>This is footer.</footer>
+<footer>
+  <div class="container">
+    <div class="resources">
+      <h4>Resources</h4>
+      <a href="/projects">Projects</a>
+      <a href="/writing">Writing</a>
+    </div>
+    <div id="contacts">
+      <h4>Contacts</h4>
+      <a href="https://github.com/agmmtoo">Github</a>
+      <a href="https://twitter.com/agmmtoo">Twitter</a>
+    </div>
+  </div>
+  <p>Copyright &copy; 2023 agmmtoo</p>
+</footer>
 
 <style>
   footer {
+    color: var(--accents-5);
     padding: var(--padding-1);
     border-top: 1px solid var(--accents-2);
     background-color: var(--accents-1);
+    & p {
+      text-align: center;
+    }
+
+    & > * + * {
+      margin-top: var(--padding-1);
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 40rem;
+    margin: auto;
+  }
+
+  .container a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: var(--accents-6);
+    }
   }
 </style>
