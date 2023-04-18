@@ -1,11 +1,12 @@
 .neon {
-    background-image: linear-gradient(to right, #2dd2dd var(--v),#9a47f3 calc(var(--v) + 25%),#fcb26d calc(var(--v) + 50%),#ff61e6 calc(var(--v) + 75%),#2dd2dd calc(var(--v) + 100%));
+    --stop: 25%;
+    background-image: linear-gradient(to right, #2dd2dd var(--stop),#9a47f3 calc(var(--stop) + 25%),#fcb26d calc(var(--stop) + 50%),#ff61e6 calc(var(--stop) + 75%),#2dd2dd calc(var(--stop) + 100%));
     background-clip: text;
     color: transparent;
     animation: change 10s ease-in-out infinite;
 }
 
-@property --v {
+@property --stop {
     syntax: '<percentage>';
     initial-value: 0%;
     inherits: false;
@@ -13,9 +14,9 @@
 
 @keyframes change {
     0%, 100% {
-        --v: -50%;
+        --stop: -50%;
     }
     50% {
-        --v: 50%;
+        --stop: 50%;
     }
 }
