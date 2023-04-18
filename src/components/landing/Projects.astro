@@ -2,19 +2,24 @@
 import { getFeaturedProjects } from "../../utils/getProjects";
 import Project from "../../types/Project";
 const featuredProjects = getFeaturedProjects();
+import { tiltProps } from "../../styles/tiltProps";
 ---
 
 <section>
   <div class="featured-projects-grid">
     {
       featuredProjects.slice(0, 4).map((project: Project) => (
-        <a href={`/projects/${project.slug}`} class="project tilt-card">
+        <a
+          href={`/projects/${project.slug}`}
+          class="project tilt-card"
+          {...tiltProps}
+        >
           <h6>{project.name}</h6>
           <p>{project.description}</p>
         </a>
       ))
     }
-    <a href="/projects" class="project tilt-card">
+    <a href="/projects" class="project tilt-card" {...tiltProps}>
       <h6>See all projects</h6>
       <div>View all projects &rarr;</div>
     </a>
@@ -36,11 +41,16 @@ const featuredProjects = getFeaturedProjects();
     grid-template-rows: 10rem 10rem 10rem;
   }
 
+  @media screen and (min-width: 768px) {
+    .featured-projects-grid {
+      gap: 1rem;
+    }
+  }
+
   .project {
     text-decoration: none;
     color: inherit;
     padding: 1rem;
-    border: 1px solid var(--accents-2);
     border-radius: 4px;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -52,6 +62,11 @@ const featuredProjects = getFeaturedProjects();
   }
 
   .tilt-card {
+    box-shadow: var(--shadow-embossed);
+  }
+
+  :global(.dark) .tilt-card {
+    border: 1px solid var(--accents-2);
     transition: all 400ms ease;
   }
   .tilt-card p {
@@ -75,3 +90,7 @@ const featuredProjects = getFeaturedProjects();
     text-decoration: underline;
   }
 </style>
+
+<script>
+  import "../../scripts/vanilla-tilt.min.js";
+</script>
