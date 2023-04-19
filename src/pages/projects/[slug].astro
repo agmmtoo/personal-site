@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import getProjects from "../../utils/getProjects";
+
+export function getStaticPaths() {
+  const projects = getProjects();
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: {
+      project,
+    },
+  }));
+}
+
+const { slug } = Astro.params;
+const { project } = Astro.props;
+---
+
+<BaseLayout title={slug}>
+  <p>
+    <!-- {slug} -->
+    {JSON.stringify(project)}
+  </p>
+</BaseLayout>
