@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
 
 import getProjects from "../../utils/getProjects";
 
@@ -19,8 +20,5 @@ const { project } = Astro.props;
 ---
 
 <BaseLayout title={slug}>
-  <p>
-    <!-- {slug} -->
-    {JSON.stringify(project)}
-  </p>
+    <ProjectLayout slug={slug} />
 </BaseLayout>

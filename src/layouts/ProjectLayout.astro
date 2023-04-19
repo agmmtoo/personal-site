@@ -1,0 +1,15 @@
+---
+const { slug } = Astro.props;
+// fetch repo's readme
+const res = await fetch(
+  `https://api.github.com/repos/agmmtoo/${slug}/contents/README.md`,
+  {
+    headers: {
+      Accept: "application/vnd.github.v3.html",
+    },
+  }
+);
+const readme = await res.text();
+---
+
+<article set:html={readme} />

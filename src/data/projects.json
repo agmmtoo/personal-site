@@ -14,7 +14,7 @@
     "description": "HN reader app using public API.",
     "url": "https://ammohn.pages.dev",
     "repo": "hn",
-    "slug": "hacker-news",
+    "slug": "hn",
     "tags": ["react", "javascript"]
   },
   {
