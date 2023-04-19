@@ -5,6 +5,6 @@ export const tiltProps = {
   "data-tilt-glare": true,
   "data-tilt-max-glare": "0.2",
   "data-tilt-scale": "1.05",
-  "data-tilt-max": "10",
-  "data-tilt-speed": "500",
+  "data-tilt-max": "8",
+  "data-tilt-speed": "1000",
 };
