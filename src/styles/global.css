@@ -144,21 +144,18 @@ input[type="checkbox"] {
   accent-color: var(--theme-1);
 }
 
-.subtitle {
+.page-heading {
+  font-size: 1.4rem;
+  display: grid;
+  place-items: center left;
+  min-height: 40vh;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
   letter-spacing: 0.5ch;
 }
 
 @media screen and (min-width: 768px) {
-  .subtitle {
+  .page-heading {
     letter-spacing: 1ch;
   }
-}
-
-.page-heading {
-  display: grid;
-  place-items: center left;
-  min-height: 60vh;
 }
