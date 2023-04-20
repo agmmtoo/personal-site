@@ -7,4 +7,5 @@ export const tiltProps = {
   "data-tilt-scale": "1.05",
   "data-tilt-max": "8",
   "data-tilt-speed": "1000",
+  "gyroscope": false,
 };
