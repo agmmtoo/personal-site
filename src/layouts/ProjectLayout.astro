@@ -1,15 +1,36 @@
 ---
+import { marked } from "marked";
+
 const { slug } = Astro.props;
 // fetch repo's readme
 const res = await fetch(
   `https://api.github.com/repos/agmmtoo/${slug}/contents/README.md`,
   {
     headers: {
-      Accept: "application/vnd.github.v3.html",
+      Accept: "application/vnd.github.v3.raw",
     },
   }
 );
 const readme = await res.text();
+const content = marked.parse(readme);
 ---
 
-<article set:html={readme} />
+<article class="readme" set:html={content} />
+
+<style>
+  article {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  .readme {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  :global(pre) {
+    padding: 1ch;
+    overflow-x: auto;
+    border: 1px solid var(--accents-2);
+    border-radius: 4px;
+  }
+</style>
