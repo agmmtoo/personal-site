@@ -11,7 +11,7 @@ import { tiltProps } from "../../styles/tiltProps";
       featuredProjects.slice(0, 4).map((project: Project) => (
         <a
           href={`/projects/${project.slug}`}
-          class="project tilt-card"
+          class="block-link project tilt-card"
           {...tiltProps}
         >
           <h6>{project.name}</h6>
@@ -19,7 +19,7 @@ import { tiltProps } from "../../styles/tiltProps";
         </a>
       ))
     }
-    <a href="/projects" class="project tilt-card" {...tiltProps}>
+    <a href="/projects" class="block-link project tilt-card" {...tiltProps}>
       <h6>See all projects</h6>
       <div>View all projects &rarr;</div>
     </a>
@@ -48,12 +48,8 @@ import { tiltProps } from "../../styles/tiltProps";
   }
 
   .project {
-    text-decoration: none;
-    color: inherit;
     padding: 1rem;
     border-radius: 4px;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
   }
 
   .project:first-child {
