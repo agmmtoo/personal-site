@@ -6,9 +6,9 @@ import Project from "../types/Project";
 <div class="projects-grid">
   {
     projects.map((project: Project) => (
-      <a href={`/projects/${project.slug}`} class="project">
-        <h6>{project.name}</h6>
-        <div>{project.description}</div>
+      <a href={`/projects/${project.slug}`} class="block-link project">
+        <h4>{project.name}</h4>
+        <p>{project.description}</p>
       </a>
     ))
   }
@@ -17,27 +17,43 @@ import Project from "../types/Project";
 <style>
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;
   }
+
+  @media (min-width: 768px) {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+      gap: 4rem;
+    }
+  }
+
   .project {
     aspect-ratio: 2;
-    text-decoration: none;
-    color: inherit;
     padding: 1rem;
     border: 1px solid var(--accents-2);
     border-radius: 4px;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    touch-action: pan-y;
-    transition-property: border-color, background, box-shadow;
+    transition-property: color, border-color, box-shadow;
     transition-duration: 300ms;
     transitiontiming-function: ease;
+
+    & p {
+      color: var(--accents-5);
+    }
   }
 
   .project:hover {
-    border-color: var(--accents-3);
+    border-color: var(--accents-1);
     overflow: hidden;
     box-shadow: var(--shadow-small);
+
+    & h4 {
+      color: var(--theme-1);
+    }
+  }
+
+  :global(.dark) .project:hover {
+    border-color: var(--theme-1);
+    background-color: var(--accents-1);
   }
 </style>
