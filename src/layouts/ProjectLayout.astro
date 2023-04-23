@@ -13,8 +13,15 @@ const res = await fetch(
 );
 const readme = await res.text();
 const content = marked.parse(readme);
+
+const repoInfo = await fetch(`https://api.github.com/repos/agmmtoo/${slug}`);
+
+const { homepage } = await repoInfo.json();
 ---
 
+<a href={homepage} target="_blank" rel="noopener noreferrer">
+  <h1>{homepage}</h1>
+</a>
 <article class="readme" set:html={content} />
 
 <style>
