@@ -3,8 +3,7 @@
     "name": "Pyonerip",
     "featured": true,
     "description": "Pyone Play ripper using public API.",
-    "url": "https://github.com/agmyintmyatoo/pyonerip",
-    "repo": "pyonerip",
+    "url": "https://github.com/agmmtoo/pyonerip",
     "slug": "pyonerip",
     "tags": ["javascript"]
   },
@@ -13,7 +12,6 @@
     "featured": true,
     "description": "HN reader app using public API.",
     "url": "https://ammohn.pages.dev",
-    "repo": "hn",
     "slug": "hn",
     "tags": ["react", "javascript"]
   },
@@ -22,7 +20,6 @@
     "featured": true,
     "description": "Note app for citing from web pages.",
     "url": "https://web-cite.pages.dev",
-    "repo": "web-cite",
     "slug": "web-cite",
     "tags": ["react", "supabase", "typescript"]
   },
@@ -30,7 +27,6 @@
     "name": "Personal Site",
     "description": "Personal site, as a side project to learn Astro.",
     "url": "/",
-    "repo": "agmyintmyatoo.github.io",
     "slug": "personal-site",
     "tags": ["astro", "react", "javascript"]
   },
@@ -39,7 +35,6 @@
     "featured": true,
     "description": "MERN stack with basic CRUD and point ranking system.",
     "url": "128.199.118.1:8080/",
-    "repo": "mews",
     "slug": "mews",
     "tags": ["express", "react", "javascript", "mongo"]
   },
@@ -47,7 +42,6 @@
     "name": "Manga Turn Web",
     "description": "Manga reader app from Manga Turn. (Server under maintenance)",
     "url": "http://mangaturn.codetotalk.com",
-    "repo": "manga-turn",
     "slug": "manga-turn",
     "tags": ["react", "javascript"]
   }

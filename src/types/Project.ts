@@ -3,7 +3,6 @@ export default interface Project {
     featured?: boolean;
     description: string;
     url: string;
-    repo: string;
     slug: string;
     tags: string[];
   }
