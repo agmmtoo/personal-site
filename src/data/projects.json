@@ -34,7 +34,7 @@
     "name": "Mews",
     "featured": true,
     "description": "MERN stack with basic CRUD and point ranking system.",
-    "url": "128.199.118.1:8080/",
+    "url": "http://128.199.118.1:8080/",
     "slug": "mews",
     "tags": ["express", "react", "javascript", "mongo"]
   },

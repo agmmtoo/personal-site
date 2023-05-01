@@ -1,7 +1,7 @@
 ---
 import { marked } from "marked";
 
-const { slug } = Astro.props;
+const { slug, project } = Astro.props;
 // fetch repo's readme
 const res = await fetch(
   `https://api.github.com/repos/agmmtoo/${slug}/contents/README.md`,
@@ -18,9 +18,30 @@ const repoInfo = await fetch(`https://api.github.com/repos/agmmtoo/${slug}`);
 
 const { homepage } = await repoInfo.json();
 ---
+
+<div class="sticky-menu">
+  <a href="." role="button" class="back">&larr; Back</a>
+  <a href={project.url} target="_blank" >Visit</a>
+</div>
+
 <article class="readme" set:html={content} />
 
 <style>
+  .sticky-menu {
+    position: sticky;
+    top: 0;
+    background-color: var(--geist-background);
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & a {
+      color: inherit;
+      text-decoration: inherit;
+      font-weight: 600;
+    }
+  }
   article {
     max-width: 80rem;
     margin: 0 auto;
