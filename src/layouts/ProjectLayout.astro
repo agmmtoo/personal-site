@@ -20,7 +20,8 @@ const { homepage } = await repoInfo.json();
 ---
 
 <div class="sticky-menu">
-  <a href="." role="button" class="back">&larr; Back</a>
+  <!-- BUG: "." in dev server works like ".." in prod -->
+  <a href=".." role="button" class="back">&larr; Back</a>
   <a href={project.url} target="_blank" >Visit</a>
 </div>
 
@@ -30,7 +31,6 @@ const { homepage } = await repoInfo.json();
   .sticky-menu {
     position: sticky;
     top: 0;
-    background-color: var(--geist-background);
     padding: 1rem 0;
     display: flex;
     align-items: center;
