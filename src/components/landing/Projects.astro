@@ -58,6 +58,15 @@ import { tiltProps } from "../../styles/tiltProps";
 
   .tilt-card {
     box-shadow: var(--shadow-embossed);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+  }
+
+  .tilt-card h6, .tilt-card p, .tilt-card div {
+    transition: transform 400ms ease;
+  }
+  .tilt-card:hover h6, .tilt-card:hover p, .tilt-card:hover div {
+    transform: translateZ(28px);
   }
 
   :global(.dark) .tilt-card {
