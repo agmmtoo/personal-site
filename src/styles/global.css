@@ -176,6 +176,7 @@ input[type="checkbox"] {
   -webkit-touch-callout: none;
 }
 
-.dark a {
-  color: var(--theme-1);
+/* NOTE: expensive selector, but cant style dangerous html content */
+.dark article a {
+  color: lightskyblue;
 }
