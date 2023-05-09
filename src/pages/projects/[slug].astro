@@ -19,6 +19,6 @@ const { slug } = Astro.params;
 const { project } = Astro.props;
 ---
 
-<BaseLayout title={slug}>
-    <ProjectLayout slug={slug} project={project} />
+<BaseLayout title={slug} description={project.description}>
+  <ProjectLayout slug={slug} project={project} />
 </BaseLayout>
