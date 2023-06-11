@@ -18,7 +18,7 @@
   {
     "name": "Web Cite",
     "featured": true,
-    "description": "Note app for citing from web pages.",
+    "description": "Note app for citing from web pages. (Server sleeping)",
     "url": "https://web-cite.pages.dev",
     "slug": "web-cite",
     "tags": ["react", "supabase", "typescript"]
@@ -33,7 +33,7 @@
   {
     "name": "Mews",
     "featured": true,
-    "description": "MERN stack with basic CRUD and point ranking system.",
+    "description": "MERN stack with basic CRUD and point ranking system. (Server under maintenance)",
     "url": "http://128.199.118.1:8080/",
     "slug": "mews",
     "tags": ["express", "react", "javascript", "mongo"]
@@ -44,5 +44,12 @@
     "url": "http://mangaturn.codetotalk.com",
     "slug": "manga-turn",
     "tags": ["react", "javascript"]
+  },
+  {
+    "name": "Snippetbox",
+    "description": "Basic web in GO",
+    "url": "",
+    "slug": "snippetbox",
+    "tags": ["go", "mysql"]
   }
 ]
