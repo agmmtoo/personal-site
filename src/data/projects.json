@@ -51,5 +51,12 @@
     "url": "",
     "slug": "snippetbox",
     "tags": ["go", "mysql"]
+  },
+  {
+    "name": "Greenlight",
+    "description": "Go REST server with RBAC",
+    "url": "",
+    "slug": "greenlight",
+    "tags": ["go", "postgresql"]
   }
 ]
