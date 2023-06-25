@@ -14,9 +14,9 @@
 
 @keyframes change {
     0%, 100% {
-        --stop: -50%;
+        --stop: -30%;
     }
     50% {
-        --stop: 50%;
+        --stop: 30%;
     }
 }
