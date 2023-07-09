@@ -1,9 +1,22 @@
 .neon {
     --stop: 25%;
-    background-image: linear-gradient(to right, #2dd2dd var(--stop),#9a47f3 calc(var(--stop) + 25%),#fcb26d calc(var(--stop) + 50%),#ff61e6 calc(var(--stop) + 75%),#2dd2dd calc(var(--stop) + 100%));
+    --to: right;
+    background-image: linear-gradient(to var(--to), #2dd2dd var(--stop),#9a47f3 calc(var(--stop) + 25%),#fcb26d calc(var(--stop) + 50%),#ff61e6 calc(var(--stop) + 75%),#2dd2dd calc(var(--stop) + 100%));
     background-clip: text;
     color: transparent;
     animation: change 10s ease-in-out infinite;
+}
+
+@media screen and (max-width: 768px) {
+    .neon {
+        --to: bottom right;  
+    }
+}
+
+@property --to {
+    syntax: '<position>';
+    initial-value: right;
+    inherits: false;
 }
 
 @property --stop {
