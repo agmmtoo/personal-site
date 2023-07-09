@@ -5,4 +5,5 @@ export default interface Project {
     url: string;
     slug: string;
     tags: string[];
+    hidden?: boolean;
   }
