@@ -14,9 +14,9 @@ const res = await fetch(
 const readme = await res.text();
 const content = marked.parse(readme);
 
-const repoInfo = await fetch(`https://api.github.com/repos/agmmtoo/${slug}`);
+// const repoInfo = await fetch(`https://api.github.com/repos/agmmtoo/${slug}`);
 
-const { homepage } = await repoInfo.json();
+// const { homepage } = await repoInfo.json();
 ---
 
 <div class="sticky-menu">

@@ -1,4 +1,13 @@
 ---
+const res = await fetch(
+  `https://api.github.com/repos/agmmtoo/personal-site/commits`
+);
+const commits = await res.json();
+
+const latestCommit = commits[0];
+const commitHash = latestCommit.sha.slice(0, 7);
+const commitDate = new Date(latestCommit.commit.author.date);
+const commitUrl = latestCommit.html_url;
 ---
 
 <footer>
@@ -15,6 +24,11 @@
     </div>
   </div>
   <p>Copyright &copy; 2023 agmmtoo</p>
+  <span
+    >Updated on {commitDate.getDate()}/{commitDate.getMonth()}/{
+      commitDate.getFullYear()
+    } [<a href={commitUrl}>{commitHash}</a>]</span
+  >
 </footer>
 
 <style>
@@ -24,7 +38,15 @@
     border-top: 1px solid var(--accents-2);
     background-color: var(--accents-1);
     & p {
+      font-size: small;
       text-align: center;
+    }
+
+    & span {
+      font-size: xx-small;
+      font-weight: bold;
+      text-align: right;
+      display: block;
     }
 
     & > * + * {
