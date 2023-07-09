@@ -113,6 +113,12 @@ main {
   --shadow-sticky: 0 12px 10px -10px rgba(0, 0, 0, 0.12);
   --shadow-embossed: 0 0 0 1px rgba(0, 0, 0, 0.07),
     0 2px 4px rgba(0, 0, 0, 0.05), 0 12px 24px rgba(0, 0, 0, 0.05);
+
+  /* language colors */
+  --lang-js: #f1e05a;
+  --lang-ts: #2b7489;
+  --lang-go: #00add8;
+  --lang-react: #61dafb;
 }
 
 .dark {
