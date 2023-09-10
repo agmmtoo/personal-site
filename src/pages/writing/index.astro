@@ -1,5 +1,19 @@
 ---
+import { getCollection } from "astro:content";
+import PostListItem from "../../components/writing/PostListItem.astro";
+const allPosts = await getCollection("posts");
+
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Writing" />
+<BaseLayout title="Writing">
+  {
+    allPosts.map((post) => (
+      <PostListItem
+        link={`writing/${post.slug}`}
+        title={post.data.title}
+        date={post.data.pubDate}
+      />
+    ))
+  }
+</BaseLayout>

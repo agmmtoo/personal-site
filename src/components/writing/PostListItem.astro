@@ -1,0 +1,19 @@
+---
+const { link, date, title } = Astro.props;
+---
+
+<div class="post">
+  <a href={link}>{title}</a>
+  <span>{date}</span>
+</div>
+
+<style>
+  .post {
+    display: flex;
+    justify-content: space-between;
+    & span,
+    & a {
+      display: block;
+    }
+  }
+</style>

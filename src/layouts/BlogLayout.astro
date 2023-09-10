@@ -1,0 +1,20 @@
+---
+const { frontmatter } = Astro.props;
+
+import BaseLayout from "./BaseLayout.astro";
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+    <h1>{frontmatter.title}</h1>
+    <datetime datetime={frontmatter.date}>{frontmatter.date}</datetime>
+    {
+        frontmatter.tags && (
+            <ul>
+                {frontmatter.tags.map((tag) => (
+                    <li>{tag}</li>
+                ))}
+            </ul>
+        )
+    }
+    <slot />
+</BaseLayout>

@@ -122,7 +122,7 @@ main {
 }
 
 .dark {
-  --theme-1: lime;
+  --theme-1: #22c55e;
   --geist-foreground: #f9fafb;
   --geist-background: #0a0a0a;
   --accents-8: #fafafa;
