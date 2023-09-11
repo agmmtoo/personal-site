@@ -5,16 +5,71 @@ import BaseLayout from "./BaseLayout.astro";
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <section class="header">
     <h1>{frontmatter.title}</h1>
-    <datetime datetime={frontmatter.date}>{frontmatter.date}</datetime>
-    {
+    <div class="post-metadata">
+      <datetime datetime={frontmatter.pubDate}
+        >{
+          Intl.DateTimeFormat("mm", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          }).format(frontmatter.pubDate)
+        }</datetime
+      >
+      {
         frontmatter.tags && (
-            <ul>
-                {frontmatter.tags.map((tag) => (
-                    <li>{tag}</li>
-                ))}
-            </ul>
+          <div class="tag-container">
+            {frontmatter.tags.map((tag) => (
+              <span class="tag">
+                <a href={`/writing/tags/${tag}`}>{tag}</a>
+              </span>
+            ))}
+          </div>
         )
-    }
+      }
+    </div>
+  </section>
+  <section class="post">
     <slot />
+  </section>
 </BaseLayout>
+
+<style>
+  section {
+    max-width: 46rem;
+    margin: 0 auto;
+  }
+
+  section.header {
+    margin-bottom: 2rem;
+    & h1 {
+      margin-bottom: 1rem;
+    }
+
+    & .post-metadata {
+      color: var(--accents-6);
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  .post {
+    line-height: 2.5;
+  }
+
+  .tag-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+
+    & .tag {
+      letter-spacing: 0.2ch;
+      & a {
+        color: inherit;
+      }
+    }
+  }
+</style>

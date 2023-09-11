@@ -4,7 +4,15 @@ const { link, date, title } = Astro.props;
 
 <div class="post">
   <a href={link}>{title}</a>
-  <span>{date}</span>
+  <span
+    >{
+      Intl.DateTimeFormat("mm", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      }).format(date)
+    }</span
+  >
 </div>
 
 <style>
@@ -13,7 +21,14 @@ const { link, date, title } = Astro.props;
     justify-content: space-between;
     & span,
     & a {
+      color: currentColor;
       display: block;
+    }
+
+    & a:visited,
+    & span {
+      text-decoration-color: var(--accents-4);
+      color: var(--accents-4);
     }
   }
 </style>
