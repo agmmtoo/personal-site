@@ -1,75 +1,112 @@
 ---
 const { frontmatter } = Astro.props;
 
-import BaseLayout from "./BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+import "../styles/global.css";
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
-  <section class="header">
-    <h1>{frontmatter.title}</h1>
-    <div class="post-metadata">
-      <datetime datetime={frontmatter.pubDate}
-        >{
-          Intl.DateTimeFormat("mm", {
-            month: "short",
-            day: "numeric",
-            year: "numeric",
-          }).format(frontmatter.pubDate)
-        }</datetime
-      >
-      {
-        frontmatter.tags && (
-          <div class="tag-container">
-            {frontmatter.tags.map((tag) => (
-              <span class="tag">
-                <a href={`/writing/tags/${tag}`}>{tag}</a>
-              </span>
-            ))}
-          </div>
-        )
+<html lang="en">
+  <head>
+    <Header title={frontmatter.title} description={frontmatter.description} />
+  </head>
+  <body>
+    <Nav />
+    <main>
+      <section class="header">
+        <h1>{frontmatter.title}</h1>
+        <div class="post-metadata">
+          <datetime datetime={frontmatter.pubDate}
+            >{
+              Intl.DateTimeFormat("mm", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              }).format(frontmatter.pubDate)
+            }</datetime
+          >
+          {
+            frontmatter.tags && (
+              <div class="tag-container">
+                {frontmatter.tags.map((tag) => (
+                  <span class="tag">
+                    <a href={`/writing/tags/${tag}`}>{tag}</a>
+                  </span>
+                ))}
+              </div>
+            )
+          }
+        </div>
+      </section>
+      <hr />
+      <section class="post">
+        <article>
+          <slot />
+        </article>
+      </section>
+    </main>
+    <Footer />
+    </body>
+    </html>
+
+    <style>
+      :global(:root) {
+        --text: #023246;
+        
+        --bg: #F5F5F0;
+
+        /* --accents-1: #EFF1F3; */
+        --accents-1: var(--bg);
       }
-    </div>
-  </section>
-  <section class="post">
-    <slot />
-  </section>
-</BaseLayout>
-
-<style>
-  section {
-    max-width: 46rem;
-    margin: 0 auto;
-  }
-
-  section.header {
-    margin-bottom: 2rem;
-    & h1 {
-      margin-bottom: 1rem;
-    }
-
-    & .post-metadata {
-      color: var(--accents-6);
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: space-between;
-    }
-  }
-
-  .post {
-    line-height: 2.5;
-  }
-
-  .tag-container {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-
-    & .tag {
-      letter-spacing: 0.2ch;
-      & a {
-        color: inherit;
+      :global(.dark) {
+        --text: var(--accents-6);
+        --bg: inherit;
       }
-    }
-  }
-</style>
+      main {
+        color: var(--text);
+        background-color: var(--bg);
+      }
+      article {
+        font-size: 2.4ch;
+        line-height: 2;
+      }
+      hr {
+        border: none;
+        border-top: 1px dotted var(--accents-2);
+        max-width: 46rem;
+        margin: var(--padding-1) auto;
+      }
+      section {
+        max-width: 46rem;
+        margin: 0 auto;
+      }
+
+      section.header {
+        & h1 {
+          margin-bottom: 1rem;
+        }
+
+        & .post-metadata {
+          color: var(--accents-4);
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+        }
+      }
+
+      .tag-container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+
+        & .tag {
+          letter-spacing: 0.2ch;
+          & a {
+            color: inherit;
+          }
+        }
+      }
+    </style>
