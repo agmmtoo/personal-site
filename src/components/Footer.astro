@@ -5,9 +5,9 @@ const res = await fetch(
 const commits = await res.json();
 
 const latestCommit = commits[0];
-const commitHash = latestCommit.sha.slice(0, 7);
-const commitDate = new Date(latestCommit.commit.author.date);
-const commitUrl = latestCommit.html_url;
+const commitHash = latestCommit?.sha?.slice(0, 7) ?? 0;
+const commitDate = new Date(latestCommit?.commit?.author?.date);
+const commitUrl = latestCommit?.html_url;
 ---
 
 <footer>
