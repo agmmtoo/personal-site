@@ -22,7 +22,8 @@ const content = marked.parse(readme);
 <div class="sticky-menu">
   <!-- BUG: "." in dev server works like ".." in prod -->
   <a href=".." role="button" class="back">&larr; Back</a>
-  <a href={project.url} target="_blank" >Visit</a>
+  <!-- <a href={project.url} target="_blank" >Visit</a> -->
+  <a href={`https://github.com/agmmtoo/${project.slug}`} target="_blank" >Visit</a>
 </div>
 
 <article class="readme" set:html={content} />
