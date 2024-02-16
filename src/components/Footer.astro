@@ -23,7 +23,7 @@ const commitUrl = latestCommit?.html_url;
       <a href="https://twitter.com/agmmtoo">Twitter</a>
     </div>
   </div>
-  <p>Copyright &copy; 2023 agmmtoo</p>
+  <p>Copyright &copy; {new Date().getFullYear()} agmmtoo</p>
   <span
     >Updated on {commitDate.getDate()}/{commitDate.getMonth()}/{
       commitDate.getFullYear()
@@ -47,6 +47,10 @@ const commitUrl = latestCommit?.html_url;
       font-weight: bold;
       text-align: right;
       display: block;
+    }
+
+    & a {
+      color: inherit;
     }
 
     & > * + * {
