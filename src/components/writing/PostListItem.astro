@@ -20,6 +20,11 @@ const { link, date, title } = Astro.props;
     margin: 2rem 0;
     display: flex;
     justify-content: space-between;
+    text-underline-offset: 0.6em;
+    :hover {
+      color: var(--theme-1);
+      text-decoration-color: var(--theme-1);
+    }
     & span,
     & a {
       color: currentColor;
