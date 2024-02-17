@@ -8,15 +8,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout title="Writing">
   <section>
-  {
-    allPosts.map((post) => (
-      <PostListItem
-        link={post.slug}
-        title={post.data.title}
-        date={post.data.pubDate}
-      />
-    ))
-  }
+    {
+      allPosts
+        .toSorted(
+          (a, b) =>
+            new Date(b.data.pubDate).getTime() -
+            new Date(a.data.pubDate).getTime()
+        )
+        .map((post) => (
+          <PostListItem
+            link={post.slug}
+            title={post.data.title}
+            date={post.data.pubDate}
+            description={post.data.description}
+          />
+        ))
+    }
   </section>
 </BaseLayout>
 

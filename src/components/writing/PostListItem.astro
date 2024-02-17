@@ -1,9 +1,12 @@
 ---
-const { link, date, title } = Astro.props;
+const { link, date, title, description } = Astro.props;
 ---
 
 <div class="post">
+  <div>
   <a href={link}>{title}</a>
+  <p>{description}</p>
+</div>
   <span
     >{
       Intl.DateTimeFormat("mm", {
@@ -21,7 +24,7 @@ const { link, date, title } = Astro.props;
     display: flex;
     justify-content: space-between;
     text-underline-offset: 0.6em;
-    :hover {
+    :hover a {
       color: var(--theme-1);
       text-decoration-color: var(--theme-1);
     }
@@ -31,10 +34,16 @@ const { link, date, title } = Astro.props;
       display: block;
     }
 
-    & a:visited,
+    & a:visited:not(:hover),
     & span {
       text-decoration-color: var(--accents-4);
       color: var(--accents-4);
+    }
+    & p {
+      margin-top: 2ch;
+      font-weight: 500;
+      font-size: small;
+      color: var(--accents-5);
     }
   }
 </style>
