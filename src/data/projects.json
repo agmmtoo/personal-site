@@ -8,6 +8,14 @@
     "tags": ["javascript"]
   },
   {
+    "name": "File Share",
+    "featured": true,
+    "description": "Minimalist file share app.",
+    "url": "https://file-share.deno.dev/",
+    "slug": "file-share",
+    "tags": ["deno", "hono", "typescript"]
+  },
+  {
     "name": "Hacker News Reader",
     "featured": true,
     "description": "HN reader app using public API.",
@@ -24,16 +32,8 @@
     "tags": ["go", "typescript", "postgresql", "react"]
   },
   {
-    "name": "File Share",
-    "featured": false,
-    "description": "Minimalist file share app.",
-    "url": "https://file-share.deno.dev/",
-    "slug": "file-share",
-    "tags": ["deno", "hono", "typescript"]
-  },
-  {
     "name": "Web Cite",
-    "featured": true,
+    "featured": false,
     "description": "Note app for citing from web pages. (Server sleeping)",
     "url": "https://web-cite.pages.dev",
     "slug": "web-cite",

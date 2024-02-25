@@ -6,10 +6,15 @@ import type Project from "../types/Project";
 <div class="projects-grid">
   {
     projects.map((project: Project) => (
-      <a href={`/projects/${project.slug}`} class="block-link project">
-        <h4>{project.name}</h4>
-        <p>{project.description}</p>
-      </a>
+      <div class="project">
+        <a href={`/projects/${project.slug}`} class="block-link">
+          <h4>{project.name}</h4>
+          <p>{project.description}</p>
+        </a>
+        <div class="visit">
+          <a href={project.url}>Visit</a>
+        </div>
+      </div>
     ))
   }
 </div>
@@ -36,6 +41,12 @@ import type Project from "../types/Project";
     transition-property: color, border-color, box-shadow;
     transition-duration: 300ms;
     transition-timing-function: ease;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      flex-grow: 1;
+    }
 
     & p {
       color: var(--accents-5);
@@ -49,6 +60,33 @@ import type Project from "../types/Project";
 
     & h4 {
       color: var(--theme-1);
+    }
+
+    /* inner shadow */
+    .visit {
+      a {
+        color: var(--theme-1);
+      }
+
+      a::before,
+      a::after {
+        content: "-";
+      }
+    }
+  }
+
+  .visit {
+    text-align: center;
+    font-weight: 600;
+    font-size: small;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    a {
+      display: block;
+      color: var(--accents-4);
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
   }
 
