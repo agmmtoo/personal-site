@@ -32,6 +32,13 @@
     "tags": ["go", "typescript", "postgresql", "react"]
   },
   {
+    "name": "lib-manage",
+    "featured": true,
+    "description": "[WIP]Library management platform.",
+    "slug": "lib-manage",
+    "tags": ["go", "postgresql"]
+  },
+  {
     "name": "Web Cite",
     "featured": false,
     "description": "Note app for citing from web pages. (Server sleeping)",
