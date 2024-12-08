@@ -1,24 +1,24 @@
 [
   {
-    "name": "Pyonerip",
-    "featured": true,
-    "description": "Pyone Play ripper using public API.",
-    "url": "https://github.com/agmmtoo/pyonerip",
-    "slug": "pyonerip",
-    "tags": ["javascript"]
-  },
-  {
     "name": "File Share",
     "featured": true,
-    "description": "Minimalist file share app.",
+    "description": "Sharing made easy with e2e encryption.",
     "url": "https://file-share.deno.dev/",
     "slug": "file-share",
     "tags": ["deno", "hono", "typescript"]
   },
   {
+    "name": "Pyonerip",
+    "featured": true,
+    "description": "Save movies from Pyone Play platform to enjoy offline.",
+    "url": "https://github.com/agmmtoo/pyonerip",
+    "slug": "pyonerip",
+    "tags": ["javascript"]
+  },
+  {
     "name": "Hacker News Reader",
     "featured": true,
-    "description": "HN reader app using public API.",
+    "description": "Stay cutting edged with the front page of internet.",
     "url": "https://ammohn.pages.dev",
     "slug": "hn",
     "tags": ["react", "javascript"]
@@ -26,14 +26,21 @@
   {
     "name": "User Management",
     "featured": true,
-    "description": "User management app with \"user\" and \"log\" entities.",
+    "description": "Manage user accounts with logging enabled.",
     "url": "http://13.250.116.55/",
     "slug": "user-management",
     "tags": ["go", "typescript", "postgresql", "react"]
   },
   {
+    "name": "librarease",
+    "featured": false,
+    "description": "[WIP]Library management platform.",
+    "slug": "librarease",
+    "tags": ["go", "postgresql"]
+  },
+  {
     "name": "lib-manage",
-    "featured": true,
+    "featured": false,
     "description": "[WIP]Library management platform.",
     "slug": "lib-manage",
     "tags": ["go", "postgresql"]
