@@ -1,5 +1,13 @@
 [
   {
+    "name": "Librarease",
+    "featured": true,
+    "description": "Digital library management platform.",
+    "url": "https://librarease.org",
+    "slug": "librarease",
+    "tags": ["go", "typescript"]
+  },
+  {
     "name": "File Share",
     "featured": true,
     "description": "Sharing made easy with e2e encryption.",
@@ -25,25 +33,11 @@
   },
   {
     "name": "User Management",
-    "featured": true,
+    "featured": false,
     "description": "Manage user accounts with logging enabled.",
     "url": "http://13.250.116.55/",
     "slug": "user-management",
     "tags": ["go", "typescript", "postgresql", "react"]
-  },
-  {
-    "name": "librarease",
-    "featured": false,
-    "description": "[WIP]Library management platform.",
-    "slug": "librarease",
-    "tags": ["go", "postgresql"]
-  },
-  {
-    "name": "lib-manage",
-    "featured": false,
-    "description": "[WIP]Library management platform.",
-    "slug": "lib-manage",
-    "tags": ["go", "postgresql"]
   },
   {
     "name": "Web Cite",

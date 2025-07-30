@@ -141,8 +141,8 @@ body {
   transition: color 0.2s ease-out, background 0.2s ease-out;
   text-underline-offset: 0.5ch;
 
-  background-image: url(https://ssl.gstatic.com/finance/images/landingpage.svg);
-  /* background-image: url('../assets/hero-bg.svg'); */
+  /* background-image: url(https://ssl.gstatic.com/finance/images/landingpage.svg); */
+  background-image: url('../assets/hero-bg.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }
